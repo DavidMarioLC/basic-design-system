@@ -77,8 +77,10 @@ body {
 
 .Header {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
+  gap: var(--space-3);
   max-width: 1400px;
   margin: 0 auto;
   padding: var(--space-4) var(--space-5);
@@ -960,4 +962,19 @@ body {
   overflow-x: auto;
   font-size: var(--font-size-sm);
   white-space: pre;
+}
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+
+@media (max-width: 640px) {
+  .Hero__title {
+    font-size: var(--font-size-2xl);
+  }
+
+  .ComponentCard--span-2,
+  .ComponentCard--span-3 {
+    grid-column: span 1;
+  }
 }
