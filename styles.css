@@ -185,6 +185,14 @@ body {
   cursor: pointer;
 }
 
+.ComponentCard--span-2 {
+  grid-column: span 2;
+}
+
+.ComponentCard--span-3 {
+  grid-column: span 3;
+}
+
 .ComponentCard:hover,
 .ComponentCard:focus-visible {
   box-shadow: 4px 4px 0 var(--color-border);

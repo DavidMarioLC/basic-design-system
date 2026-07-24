@@ -53,6 +53,11 @@ Botón sólido, sin radio de borde, sin sombra — invierte fg/bg en hover.
 para mostrar cada componente (título + fila de ejemplos); no es parte del
 sistema de componentes en sí.
 
+`.ComponentCard--span-2` / `.ComponentCard--span-3` — modificadores
+opcionales (`grid-column: span N`) para componentes que necesitan más ancho
+en la grilla para apreciarse bien (ej: `.Table` y `.Accordion`, que con el
+ancho de una columna quedan demasiado apretados).
+
 ### Radio (`.Radio`)
 
 `<input type="radio">` reestilado (`appearance: none`) manteniendo su
