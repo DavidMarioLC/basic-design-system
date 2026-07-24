@@ -595,6 +595,51 @@ body {
 }
 
 /* ==========================================================================
+   Accordion
+   ========================================================================== */
+
+.Accordion {
+  width: 100%;
+  border: 2px solid var(--color-border);
+}
+
+.Accordion__summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-3) var(--space-4);
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  list-style: none;
+}
+
+.Accordion__summary::-webkit-details-marker {
+  display: none;
+}
+
+.Accordion__summary::after {
+  content: "+";
+  font-weight: var(--font-weight-extrabold);
+}
+
+.Accordion[open] > .Accordion__summary::after {
+  content: "\2212";
+}
+
+.Accordion__summary:hover {
+  background: var(--color-fg);
+  color: var(--color-bg);
+}
+
+.Accordion__content {
+  padding: var(--space-4);
+  border-top: 2px solid var(--color-border);
+  color: var(--color-muted);
+}
+
+/* ==========================================================================
    Modal
    ========================================================================== */
 

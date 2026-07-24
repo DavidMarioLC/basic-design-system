@@ -136,6 +136,24 @@ mayúsculas, letter-spacing amplio.
 - `.Badge` — `display: inline-block`, fondo `--color-bg`, texto `--color-fg`.
 - `.Badge--inverted` — invierte fg/bg, mismo patrón que `.Button--secondary`.
 
+### Accordion (`.Accordion`)
+
+`<details>` + `<summary>` nativos de HTML5 reestilados — sin JS, el
+toggle/estado abierto-cerrado y la accesibilidad de teclado los maneja el
+navegador.
+
+- `.Accordion` — el `<details>`; `width: 100%` para que apile verticalmente
+  dentro de `.ComponentCard__row` (que es `flex-wrap`), y borde duro propio
+  (no se fusiona con accordions vecinos — el layout que lo contiene puede
+  tener gap, así que cada uno se mantiene autocontenido).
+- `.Accordion__summary` — el `<summary>`; se le quita el marcador nativo
+  (`list-style: none` + `::-webkit-details-marker: none`) y se reemplaza por
+  un indicador `+`/`−` vía `::after`, controlado con el selector de atributo
+  `[open]` en el `<details>` padre.
+- `.Accordion__content` — `<div>` con el contenido, hijo del `<details>`
+  (no puede ir dentro de `<summary>`); se muestra/oculta automáticamente por
+  el navegador según el estado `open`.
+
 ### Patrón: modal de preview + código
 
 Cada `.ComponentCard` es clicable (y focuseable con teclado). Al activarla,
