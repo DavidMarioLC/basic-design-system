@@ -2,6 +2,12 @@
    Design Tokens — Basic Design System (Brutalist)
    ========================================================================== */
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 :root {
   /* Color — stark black/white/gray, no accent color */
   --color-black: #000000;
@@ -293,6 +299,49 @@ body {
 }
 
 .Radio__input:disabled ~ .Radio__label {
+  color: var(--color-muted);
+  cursor: not-allowed;
+}
+
+/* ==========================================================================
+   Input
+   ========================================================================== */
+
+.Input {
+  display: inline-flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  min-width: 0;
+}
+
+.Input__label {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.Input__field {
+  width: 100%;
+  padding: var(--space-2) var(--space-3);
+  border: 2px solid var(--color-border);
+  background: var(--color-bg);
+  color: var(--color-fg);
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-base);
+}
+
+.Input__field::placeholder {
+  color: var(--color-muted);
+}
+
+.Input__field:focus {
+  outline: none;
+  box-shadow: 4px 4px 0 var(--color-border);
+}
+
+.Input__field:disabled {
+  border-color: var(--color-muted);
   color: var(--color-muted);
   cursor: not-allowed;
 }

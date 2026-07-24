@@ -66,6 +66,19 @@ simulado.
   input hermano está `:disabled` (selector `~`).
 - `:disabled` — borde y punto en `--color-muted`, `cursor: not-allowed`.
 
+### Input (`.Input`)
+
+`<input>` reestilado dentro de un `<label>` wrapper, manteniendo semántica
+y accesibilidad nativas (el label asocia el texto al campo sin necesidad de
+`for`/`id`).
+
+- `.Input` — label wrapper, `display: inline-flex`, `flex-direction: column`.
+- `.Input__label` — texto del campo, en mayúsculas, bold.
+- `.Input__field` — el input nativo; borde duro de 2px, fondo `--color-bg`.
+  El foco reemplaza el outline por defecto con `box-shadow` duro (mismo
+  patrón que `.ComponentCard:hover`).
+- `:disabled` — borde y texto en `--color-muted`, `cursor: not-allowed`.
+
 ### Patrón: modal de preview + código
 
 Cada `.ComponentCard` es clicable (y focuseable con teclado). Al activarla,
@@ -83,6 +96,8 @@ class="ComponentCard__code">` con el snippet a mostrar.
 
 ## Convenciones de código
 
+- Reset global `box-sizing: border-box` (`*, *::before, *::after`) para que
+  padding y border no se sumen al ancho declarado de ningún componente.
 - Tokens como custom properties CSS en `:root` (`styles.css`).
 - Nomenclatura de tokens: `--{categoria}-{variante}` (ej: `--color-gray-500`,
   `--font-size-lg`, `--space-4`).
