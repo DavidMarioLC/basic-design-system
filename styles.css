@@ -172,3 +172,64 @@ body {
   grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
   gap: var(--space-5);
 }
+
+.ComponentCard {
+  padding: var(--space-5);
+  border: 2px solid var(--color-border);
+}
+
+.ComponentCard__title {
+  margin: 0 0 var(--space-4);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-muted);
+}
+
+.ComponentCard__row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+/* ==========================================================================
+   Button
+   ========================================================================== */
+
+.Button {
+  display: inline-block;
+  padding: var(--space-2) var(--space-4);
+  border: 2px solid var(--color-border);
+  background: var(--color-fg);
+  color: var(--color-bg);
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+}
+
+.Button:hover {
+  background: var(--color-bg);
+  color: var(--color-fg);
+}
+
+.Button--secondary {
+  background: var(--color-bg);
+  color: var(--color-fg);
+}
+
+.Button--secondary:hover {
+  background: var(--color-fg);
+  color: var(--color-bg);
+}
+
+.Button:disabled {
+  border-color: var(--color-muted);
+  background: var(--color-bg);
+  color: var(--color-muted);
+  cursor: not-allowed;
+}

@@ -40,7 +40,18 @@ Escala de 4px: `--space-1` (4px) hasta `--space-8` (64px), pasos
 
 ## Componentes
 
-Ninguno definido todavía.
+### Button (`.Button`)
+
+Botón sólido, sin radio de borde, sin sombra — invierte fg/bg en hover.
+
+- `.Button` — variante primaria (fondo `--color-fg`, texto `--color-bg`).
+- `.Button--secondary` — invierte los colores base (fondo `--color-bg`,
+  texto `--color-fg`); el hover también se invierte.
+- `:disabled` — borde y texto en `--color-muted`, sin interacción.
+
+`.ComponentCard` es el bloque contenedor usado en la grilla de `#components`
+para mostrar cada componente (título + fila de ejemplos); no es parte del
+sistema de componentes en sí.
 
 ## Convenciones de código
 
