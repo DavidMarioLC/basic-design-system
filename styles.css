@@ -401,6 +401,200 @@ body {
 }
 
 /* ==========================================================================
+   Slider
+   ========================================================================== */
+
+.Slider {
+  display: inline-flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  min-width: 0;
+}
+
+.Slider__label {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.Slider__field {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 100%;
+  margin: var(--space-2) 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.Slider__field::-webkit-slider-runnable-track {
+  height: 4px;
+  background: var(--color-border);
+}
+
+.Slider__field::-webkit-slider-thumb {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  margin-top: -8px;
+  border: 2px solid var(--color-border);
+  background: var(--color-fg);
+  cursor: pointer;
+}
+
+.Slider__field::-moz-range-track {
+  height: 4px;
+  background: var(--color-border);
+}
+
+.Slider__field::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border: 2px solid var(--color-border);
+  border-radius: 0;
+  background: var(--color-fg);
+  cursor: pointer;
+}
+
+.Slider__field:disabled {
+  cursor: not-allowed;
+}
+
+.Slider__field:disabled::-webkit-slider-runnable-track {
+  background: var(--color-muted);
+}
+
+.Slider__field:disabled::-webkit-slider-thumb {
+  border-color: var(--color-muted);
+  background: var(--color-muted);
+  cursor: not-allowed;
+}
+
+.Slider__field:disabled::-moz-range-track {
+  background: var(--color-muted);
+}
+
+.Slider__field:disabled::-moz-range-thumb {
+  border-color: var(--color-muted);
+  background: var(--color-muted);
+  cursor: not-allowed;
+}
+
+/* ==========================================================================
+   Select
+   ========================================================================== */
+
+.Select {
+  display: inline-flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  min-width: 0;
+}
+
+.Select__label {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.Select__control {
+  position: relative;
+}
+
+.Select__control::after {
+  content: "▾";
+  position: absolute;
+  top: 50%;
+  right: var(--space-3);
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.Select__field {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 100%;
+  padding: var(--space-2) var(--space-6) var(--space-2) var(--space-3);
+  border: 2px solid var(--color-border);
+  background: var(--color-bg);
+  color: var(--color-fg);
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-base);
+  cursor: pointer;
+}
+
+.Select__field:focus {
+  outline: none;
+  box-shadow: 4px 4px 0 var(--color-border);
+}
+
+.Select__field:disabled {
+  border-color: var(--color-muted);
+  color: var(--color-muted);
+  cursor: not-allowed;
+}
+
+/* ==========================================================================
+   Avatar
+   ========================================================================== */
+
+.Avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+  border: 2px solid var(--color-border);
+  background: var(--color-fg);
+  color: var(--color-bg);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-extrabold);
+  text-transform: uppercase;
+}
+
+.Avatar__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.Avatar--sm {
+  width: 28px;
+  height: 28px;
+  font-size: var(--font-size-xs);
+}
+
+.Avatar--lg {
+  width: 56px;
+  height: 56px;
+  font-size: var(--font-size-lg);
+}
+
+/* ==========================================================================
+   Badge
+   ========================================================================== */
+
+.Badge {
+  display: inline-block;
+  padding: var(--space-1) var(--space-3);
+  border: 2px solid var(--color-border);
+  background: var(--color-bg);
+  color: var(--color-fg);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.Badge--inverted {
+  background: var(--color-fg);
+  color: var(--color-bg);
+}
+
+/* ==========================================================================
    Modal
    ========================================================================== */
 

@@ -91,6 +91,51 @@ y accesibilidad nativas (el label asocia el texto al campo sin necesidad de
   patrón que `.ComponentCard:hover`).
 - `:disabled` — borde y texto en `--color-muted`, `cursor: not-allowed`.
 
+### Slider (`.Slider`)
+
+`<input type="range">` reestilado dentro de un `<label>` wrapper, mismo
+patrón de `.Input`.
+
+- `.Slider` — label wrapper, `display: inline-flex`, `flex-direction: column`.
+- `.Slider__label` — texto del campo, en mayúsculas, bold.
+- `.Slider__field` — el input nativo; track plano de 4px (`--color-border`)
+  y thumb cuadrado con borde duro de 2px (pseudo-elementos
+  `::-webkit-slider-*` / `::-moz-range-*`, ya que `<input type="range">` no
+  se puede estilizar con selectores estándar).
+- `:disabled` — track y thumb en `--color-muted`, `cursor: not-allowed`.
+
+### Select (`.Select`)
+
+`<select>` reestilado (`appearance: none`) con flecha propia, ya que
+`<select>` no admite pseudo-elementos de forma confiable — la flecha vive en
+`.Select__control::after` en vez de en el propio `<select>`.
+
+- `.Select` — label wrapper, `display: inline-flex`, `flex-direction: column`.
+- `.Select__label` — texto del campo, en mayúsculas, bold.
+- `.Select__control` — wrapper `position: relative` que agrega la flecha
+  decorativa (`::after`, `pointer-events: none`).
+- `.Select__field` — el select nativo; mismo tratamiento visual que
+  `.Input__field` (borde duro, foco con `box-shadow`).
+- `:disabled` — borde y texto en `--color-muted`, `cursor: not-allowed`.
+
+### Avatar (`.Avatar`)
+
+Cuadrado con borde duro (no círculo — consistente con el brutalismo de
+bordes rectos del resto del sistema), fondo invertido (`--color-fg`) con
+iniciales en mayúsculas, o una imagen recortada con `object-fit: cover`.
+
+- `.Avatar` — contenedor `40×40`, `display: inline-flex` centrado.
+- `.Avatar__image` — `<img>` opcional dentro del avatar, cubre el 100%.
+- `.Avatar--sm` / `.Avatar--lg` — modificadores de tamaño (`28px` / `56px`).
+
+### Badge (`.Badge`)
+
+Etiqueta pequeña, mismo lenguaje visual que `.Hero__tag`: borde duro,
+mayúsculas, letter-spacing amplio.
+
+- `.Badge` — `display: inline-block`, fondo `--color-bg`, texto `--color-fg`.
+- `.Badge--inverted` — invierte fg/bg, mismo patrón que `.Button--secondary`.
+
 ### Patrón: modal de preview + código
 
 Cada `.ComponentCard` es clicable (y focuseable con teclado). Al activarla,

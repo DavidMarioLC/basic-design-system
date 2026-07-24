@@ -119,6 +119,88 @@
   &lt;input class="Input__field" type="text" placeholder="Type here" disabled&gt;
 &lt;/label&gt;</template>
             </div>
+            <div class="ComponentCard" data-component-name="Slider" tabindex="0">
+                <span class="ComponentCard__title">Slider</span>
+                <div class="ComponentCard__row">
+                    <label class="Slider">
+                        <span class="Slider__label">Volume</span>
+                        <input class="Slider__field" type="range" min="0" max="100" value="40">
+                    </label>
+                    <label class="Slider">
+                        <span class="Slider__label">Disabled</span>
+                        <input class="Slider__field" type="range" min="0" max="100" value="60" disabled>
+                    </label>
+                </div>
+                <template class="ComponentCard__code">&lt;label class="Slider"&gt;
+  &lt;span class="Slider__label"&gt;Volume&lt;/span&gt;
+  &lt;input class="Slider__field" type="range" min="0" max="100" value="40"&gt;
+&lt;/label&gt;
+&lt;label class="Slider"&gt;
+  &lt;span class="Slider__label"&gt;Disabled&lt;/span&gt;
+  &lt;input class="Slider__field" type="range" min="0" max="100" value="60" disabled&gt;
+&lt;/label&gt;</template>
+            </div>
+            <div class="ComponentCard" data-component-name="Select" tabindex="0">
+                <span class="ComponentCard__title">Select</span>
+                <div class="ComponentCard__row">
+                    <label class="Select">
+                        <span class="Select__label">Country</span>
+                        <div class="Select__control">
+                            <select class="Select__field">
+                                <option>Argentina</option>
+                                <option>Brazil</option>
+                                <option>Chile</option>
+                            </select>
+                        </div>
+                    </label>
+                    <label class="Select">
+                        <span class="Select__label">Disabled</span>
+                        <div class="Select__control">
+                            <select class="Select__field" disabled>
+                                <option>Argentina</option>
+                            </select>
+                        </div>
+                    </label>
+                </div>
+                <template class="ComponentCard__code">&lt;label class="Select"&gt;
+  &lt;span class="Select__label"&gt;Country&lt;/span&gt;
+  &lt;div class="Select__control"&gt;
+    &lt;select class="Select__field"&gt;
+      &lt;option&gt;Argentina&lt;/option&gt;
+      &lt;option&gt;Brazil&lt;/option&gt;
+      &lt;option&gt;Chile&lt;/option&gt;
+    &lt;/select&gt;
+  &lt;/div&gt;
+&lt;/label&gt;
+&lt;label class="Select"&gt;
+  &lt;span class="Select__label"&gt;Disabled&lt;/span&gt;
+  &lt;div class="Select__control"&gt;
+    &lt;select class="Select__field" disabled&gt;
+      &lt;option&gt;Argentina&lt;/option&gt;
+    &lt;/select&gt;
+  &lt;/div&gt;
+&lt;/label&gt;</template>
+            </div>
+            <div class="ComponentCard" data-component-name="Avatar" tabindex="0">
+                <span class="ComponentCard__title">Avatar</span>
+                <div class="ComponentCard__row">
+                    <span class="Avatar Avatar--sm">JD</span>
+                    <span class="Avatar">JD</span>
+                    <span class="Avatar Avatar--lg">JD</span>
+                </div>
+                <template class="ComponentCard__code">&lt;span class="Avatar Avatar--sm"&gt;JD&lt;/span&gt;
+&lt;span class="Avatar"&gt;JD&lt;/span&gt;
+&lt;span class="Avatar Avatar--lg"&gt;JD&lt;/span&gt;</template>
+            </div>
+            <div class="ComponentCard" data-component-name="Badge" tabindex="0">
+                <span class="ComponentCard__title">Badge</span>
+                <div class="ComponentCard__row">
+                    <span class="Badge">New</span>
+                    <span class="Badge Badge--inverted">Beta</span>
+                </div>
+                <template class="ComponentCard__code">&lt;span class="Badge"&gt;New&lt;/span&gt;
+&lt;span class="Badge Badge--inverted"&gt;Beta&lt;/span&gt;</template>
+            </div>
         </div>
     </section>
 
