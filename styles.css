@@ -810,6 +810,40 @@ body {
 }
 
 /* ==========================================================================
+   Card
+   ========================================================================== */
+
+.Card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  width: 100%;
+  padding: var(--space-5);
+  border: 2px solid var(--color-border);
+  background: var(--color-bg);
+  color: var(--color-fg);
+}
+
+.Card__title {
+  margin: 0;
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-extrabold);
+  text-transform: uppercase;
+}
+
+.Card__description {
+  margin: 0;
+  color: var(--color-muted);
+  line-height: var(--line-height-relaxed);
+}
+
+.Card__footer {
+  display: flex;
+  gap: var(--space-3);
+  margin-top: var(--space-2);
+}
+
+/* ==========================================================================
    Modal
    ========================================================================== */
 

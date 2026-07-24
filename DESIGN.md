@@ -205,6 +205,19 @@ por contraste — `.Alert--inverted` invierte fg/bg, mismo patrón que
   no tiene suficiente contraste sobre fondo invertido).
 - `.Alert--inverted` — invierte fg/bg.
 
+### Card (`.Card`)
+
+Contenedor genérico de contenido con borde duro — distinto de
+`.ComponentCard`, que es específico de la grilla de `#components` y no
+forma parte del sistema de componentes en sí.
+
+- `.Card` — `display: flex; flex-direction: column`, borde duro,
+  `width: 100%` para apilar dentro de `.ComponentCard__row`.
+- `.Card__title` — encabezado, mayúsculas, extrabold.
+- `.Card__description` — texto de cuerpo, `--color-muted`.
+- `.Card__footer` — fila de acciones (ej: un `.Button`), con margen
+  superior para separarla del contenido.
+
 ### FormDemo (`.FormDemo`)
 
 Sección de ejemplo (`#form-demo`, en `index.html` después de `#components`)
