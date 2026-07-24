@@ -66,6 +66,18 @@ simulado.
   input hermano está `:disabled` (selector `~`).
 - `:disabled` — borde y punto en `--color-muted`, `cursor: not-allowed`.
 
+### Checkbox (`.Checkbox`)
+
+`<input type="checkbox">` reestilado (`appearance: none`), mismo patrón que
+`.Radio`: input real, no un div simulado.
+
+- `.Checkbox` — label wrapper, `display: inline-flex`.
+- `.Checkbox__input` — el input nativo; cuadrado con borde duro de 2px, tilde
+  interior (`::before`, `clip-path`) que escala con `:checked`.
+- `.Checkbox__label` — texto asociado; se atenúa a `--color-muted` cuando el
+  input hermano está `:disabled` (selector `~`).
+- `:disabled` — borde y tilde en `--color-muted`, `cursor: not-allowed`.
+
 ### Input (`.Input`)
 
 `<input>` reestilado dentro de un `<label>` wrapper, manteniendo semántica

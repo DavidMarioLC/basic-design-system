@@ -304,6 +304,60 @@ body {
 }
 
 /* ==========================================================================
+   Checkbox
+   ========================================================================== */
+
+.Checkbox {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+}
+
+.Checkbox__input {
+  appearance: none;
+  -webkit-appearance: none;
+  display: inline-grid;
+  place-content: center;
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  border: 2px solid var(--color-border);
+  background: var(--color-bg);
+  cursor: pointer;
+}
+
+.Checkbox__input::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  background: var(--color-fg);
+  clip-path: polygon(
+    14% 44%, 0% 65%, 36% 100%, 100% 20%, 80% 0%, 34% 61%
+  );
+  transform: scale(0);
+}
+
+.Checkbox__input:checked::before {
+  transform: scale(1);
+}
+
+.Checkbox__input:disabled {
+  border-color: var(--color-muted);
+  cursor: not-allowed;
+}
+
+.Checkbox__input:disabled::before {
+  background: var(--color-muted);
+}
+
+.Checkbox__input:disabled ~ .Checkbox__label {
+  color: var(--color-muted);
+  cursor: not-allowed;
+}
+
+/* ==========================================================================
    Input
    ========================================================================== */
 
