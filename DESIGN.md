@@ -53,6 +53,34 @@ Botón sólido, sin radio de borde, sin sombra — invierte fg/bg en hover.
 para mostrar cada componente (título + fila de ejemplos); no es parte del
 sistema de componentes en sí.
 
+### Radio (`.Radio`)
+
+`<input type="radio">` reestilado (`appearance: none`) manteniendo su
+semántica y accesibilidad nativas — sigue siendo un input real, no un div
+simulado.
+
+- `.Radio` — label wrapper, `display: inline-flex`.
+- `.Radio__input` — el input nativo; círculo con borde duro de 2px, punto
+  interior (`::before`) que escala con `:checked`.
+- `.Radio__label` — texto asociado; se atenúa a `--color-muted` cuando el
+  input hermano está `:disabled` (selector `~`).
+- `:disabled` — borde y punto en `--color-muted`, `cursor: not-allowed`.
+
+### Patrón: modal de preview + código
+
+Cada `.ComponentCard` es clicable (y focuseable con teclado). Al activarla,
+`app.js` abre el `<dialog>` nativo `#componentModal` (`.Modal`) con:
+
+- un preview (clon del `.ComponentCard__row` de la card),
+- el snippet HTML del componente, leído de un
+  `<template class="ComponentCard__code">` dentro de la misma card,
+- un botón `.Modal__copy` que copia el snippet al portapapeles.
+
+Usa el elemento `<dialog>` de HTML5 (`showModal()` / `close()`), sin
+librerías. Cerrar es nativo: click en el backdrop, `Esc`, o `.Modal__close`.
+Al agregar un componente nuevo, su card debe incluir su propio `<template
+class="ComponentCard__code">` con el snippet a mostrar.
+
 ## Convenciones de código
 
 - Tokens como custom properties CSS en `:root` (`styles.css`).

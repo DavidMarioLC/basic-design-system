@@ -176,6 +176,16 @@ body {
 .ComponentCard {
   padding: var(--space-5);
   border: 2px solid var(--color-border);
+  cursor: pointer;
+}
+
+.ComponentCard:hover,
+.ComponentCard:focus-visible {
+  box-shadow: 4px 4px 0 var(--color-border);
+}
+
+.ComponentCard:focus-visible {
+  outline: none;
 }
 
 .ComponentCard__title {
@@ -232,4 +242,148 @@ body {
   background: var(--color-bg);
   color: var(--color-muted);
   cursor: not-allowed;
+}
+
+/* ==========================================================================
+   Radio
+   ========================================================================== */
+
+.Radio {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+}
+
+.Radio__input {
+  appearance: none;
+  -webkit-appearance: none;
+  display: inline-grid;
+  place-content: center;
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  border: 2px solid var(--color-border);
+  border-radius: 50%;
+  background: var(--color-bg);
+  cursor: pointer;
+}
+
+.Radio__input::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--color-fg);
+  transform: scale(0);
+}
+
+.Radio__input:checked::before {
+  transform: scale(1);
+}
+
+.Radio__input:disabled {
+  border-color: var(--color-muted);
+  cursor: not-allowed;
+}
+
+.Radio__input:disabled::before {
+  background: var(--color-muted);
+}
+
+.Radio__input:disabled ~ .Radio__label {
+  color: var(--color-muted);
+  cursor: not-allowed;
+}
+
+/* ==========================================================================
+   Modal
+   ========================================================================== */
+
+.Modal {
+  width: 90vw;
+  max-width: 600px;
+  padding: 0;
+  border: 2px solid var(--color-border);
+  background: var(--color-bg);
+  color: var(--color-fg);
+  font-family: var(--font-family-base);
+}
+
+.Modal::backdrop {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.Modal__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-4) var(--space-5);
+  border-bottom: 2px solid var(--color-border);
+}
+
+.Modal__title {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-extrabold);
+  text-transform: uppercase;
+}
+
+.Modal__close {
+  width: 32px;
+  height: 32px;
+  border: 2px solid var(--color-border);
+  background: var(--color-bg);
+  color: var(--color-fg);
+  font-size: var(--font-size-lg);
+  line-height: 1;
+  cursor: pointer;
+}
+
+.Modal__close:hover {
+  background: var(--color-fg);
+  color: var(--color-bg);
+}
+
+.Modal__preview {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  padding: var(--space-6) var(--space-5);
+  border-bottom: 2px solid var(--color-border);
+}
+
+.Modal__codeWrap {
+  position: relative;
+}
+
+.Modal__copy {
+  position: absolute;
+  top: var(--space-3);
+  right: var(--space-3);
+  padding: var(--space-1) var(--space-3);
+  border: 2px solid var(--color-border);
+  background: var(--color-fg);
+  color: var(--color-bg);
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+}
+
+.Modal__copy:hover {
+  background: var(--color-bg);
+  color: var(--color-fg);
+}
+
+.Modal__code {
+  margin: 0;
+  padding: var(--space-5);
+  overflow-x: auto;
+  font-size: var(--font-size-sm);
+  white-space: pre;
 }

@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project
 
-A static, framework-free brutalist design system: raw, unadorned, high-contrast. No accent color — hierarchy comes from black/white/gray and monospace typography. Just `index.html` + `styles.css`, no build step, no package manager.
+A static, framework-free brutalist design system: raw, unadorned, high-contrast. No accent color — hierarchy comes from black/white/gray and monospace typography. Just `index.html` + `styles.css` + `app.js`, no build step, no package manager.
 
 ## Commands
 
@@ -19,6 +19,7 @@ curl -sf http://localhost:8123
 
 - `styles.css` — all design tokens live as CSS custom properties on `:root`, followed by component styles. Tokens are consumed everywhere via `var(--token-name)`; never hardcode raw colors/sizes/spacing in component rules.
 - `index.html` — single page consuming the tokens/components from `styles.css`.
+- `app.js` — vanilla JS, no dependencies. Currently wires the `#components` grid: clicking a `.ComponentCard` opens a native `<dialog>` (`.Modal`) showing a live preview plus a copy-pasteable HTML snippet read from that card's `<template class="ComponentCard__code">`.
 - `DESIGN.md` (Spanish) — the source of truth for the design system's principles, tokens, and conventions. Read it before adding tokens or components; keep it in sync when you change either.
 
 ### Token conventions (from DESIGN.md)

@@ -29,15 +29,61 @@
     <section class="Components" id="components">
         <h2 class="Components__title">Components</h2>
         <div class="Components__grid">
-            <div class="ComponentCard">
+            <div class="ComponentCard" data-component-name="Button" tabindex="0">
                 <span class="ComponentCard__title">Button</span>
                 <div class="ComponentCard__row">
                     <button class="Button">Primary</button>
                     <button class="Button Button--secondary">Secondary</button>
                     <button class="Button" disabled>Disabled</button>
                 </div>
+                <template class="ComponentCard__code">&lt;button class="Button"&gt;Primary&lt;/button&gt;
+&lt;button class="Button Button--secondary"&gt;Secondary&lt;/button&gt;
+&lt;button class="Button" disabled&gt;Disabled&lt;/button&gt;</template>
+            </div>
+            <div class="ComponentCard" data-component-name="Radio" tabindex="0">
+                <span class="ComponentCard__title">Radio</span>
+                <div class="ComponentCard__row">
+                    <label class="Radio">
+                        <input class="Radio__input" type="radio" name="demo-radio" checked>
+                        <span class="Radio__label">Option A</span>
+                    </label>
+                    <label class="Radio">
+                        <input class="Radio__input" type="radio" name="demo-radio">
+                        <span class="Radio__label">Option B</span>
+                    </label>
+                    <label class="Radio">
+                        <input class="Radio__input" type="radio" name="demo-radio" disabled>
+                        <span class="Radio__label">Disabled</span>
+                    </label>
+                </div>
+                <template class="ComponentCard__code">&lt;label class="Radio"&gt;
+  &lt;input class="Radio__input" type="radio" name="group" checked&gt;
+  &lt;span class="Radio__label"&gt;Option A&lt;/span&gt;
+&lt;/label&gt;
+&lt;label class="Radio"&gt;
+  &lt;input class="Radio__input" type="radio" name="group"&gt;
+  &lt;span class="Radio__label"&gt;Option B&lt;/span&gt;
+&lt;/label&gt;
+&lt;label class="Radio"&gt;
+  &lt;input class="Radio__input" type="radio" name="group" disabled&gt;
+  &lt;span class="Radio__label"&gt;Disabled&lt;/span&gt;
+&lt;/label&gt;</template>
             </div>
         </div>
     </section>
+
+    <dialog class="Modal" id="componentModal">
+        <div class="Modal__header">
+            <span class="Modal__title"></span>
+            <button class="Modal__close" type="button" aria-label="Close">&times;</button>
+        </div>
+        <div class="Modal__preview"></div>
+        <div class="Modal__codeWrap">
+            <button class="Modal__copy" type="button">Copy</button>
+            <pre class="Modal__code"><code></code></pre>
+        </div>
+    </dialog>
+
+    <script src="app.js"></script>
 </body>
 </html>
