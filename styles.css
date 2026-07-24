@@ -1,0 +1,174 @@
+/* ==========================================================================
+   Design Tokens — Basic Design System (Brutalist)
+   ========================================================================== */
+
+:root {
+  /* Color — stark black/white/gray, no accent color */
+  --color-black: #000000;
+  --color-white: #ffffff;
+
+  --color-gray-100: #f2f2f2;
+  --color-gray-200: #e0e0e0;
+  --color-gray-300: #c4c4c4;
+  --color-gray-400: #a0a0a0;
+  --color-gray-500: #7a7a7a;
+  --color-gray-600: #555555;
+  --color-gray-700: #383838;
+  --color-gray-800: #1f1f1f;
+  --color-gray-900: #0a0a0a;
+
+  /* Semantic aliases */
+  --color-bg: var(--color-gray-200);
+  --color-fg: var(--color-black);
+  --color-border: var(--color-black);
+  --color-muted: var(--color-gray-500);
+
+  /* Typography */
+  --font-family-base: 'JetBrains Mono', monospace;
+
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+
+  --font-size-xs: 0.75rem;   /* 12px */
+  --font-size-sm: 0.875rem;  /* 14px */
+  --font-size-base: 1rem;    /* 16px */
+  --font-size-lg: 1.25rem;   /* 20px */
+  --font-size-xl: 1.5rem;    /* 24px */
+  --font-size-2xl: 2rem;     /* 32px */
+  --font-size-3xl: 3rem;     /* 48px */
+  --font-size-4xl: 4rem;     /* 64px */
+
+  --line-height-tight: 1.1;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.75;
+
+  /* Spacing — 4px scale */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-fg);
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-normal);
+  margin: 0;
+}
+
+/* ==========================================================================
+   Header
+   ========================================================================== */
+
+.Header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: var(--space-4) var(--space-5);
+  border-bottom: 2px solid var(--color-border);
+}
+
+.Header__brand {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-extrabold);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.Header__link {
+  color: var(--color-fg);
+  font-weight: var(--font-weight-medium);
+  text-decoration: none;
+  border-bottom: 2px solid var(--color-border);
+}
+
+.Header__link:hover {
+  background: var(--color-fg);
+  color: var(--color-bg);
+}
+
+/* ==========================================================================
+   Hero
+   ========================================================================== */
+
+.Hero {
+  max-width: 750px;
+  margin: 0 auto;
+  padding: var(--space-8) var(--space-5);
+  text-align: center;
+}
+
+.Hero__tag {
+  display: inline-block;
+  margin: 0 0 var(--space-6);
+  padding: var(--space-1) var(--space-3);
+  border: 2px solid var(--color-border);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.Hero__title {
+  margin: 0 0 var(--space-4);
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-extrabold);
+  line-height: var(--line-height-tight);
+  text-transform: uppercase;
+}
+
+.Hero__description {
+  margin: 0;
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-muted);
+}
+
+.Hero__link {
+  display: inline-block;
+  margin-top: var(--space-5);
+  color: var(--color-fg);
+  font-weight: var(--font-weight-medium);
+  text-decoration: none;
+  border-bottom: 2px solid var(--color-border);
+}
+
+.Hero__link:hover {
+  background: var(--color-fg);
+  color: var(--color-bg);
+}
+
+/* ==========================================================================
+   Components
+   ========================================================================== */
+
+.Components {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: var(--space-8) var(--space-5);
+}
+
+.Components__title {
+  margin: 0 0 var(--space-6);
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-extrabold);
+  text-transform: uppercase;
+}
+
+.Components__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: var(--space-5);
+}
