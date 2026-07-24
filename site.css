@@ -1,0 +1,409 @@
+/* ==========================================================================
+   Footer
+   ========================================================================== */
+
+.Footer {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: var(--space-4) var(--space-5);
+  border-top: 2px solid var(--color-border);
+  text-align: center;
+}
+
+.Footer__text {
+  color: var(--color-muted);
+  font-size: var(--font-size-sm);
+}
+
+.Footer__link {
+  color: var(--color-fg);
+  font-weight: var(--font-weight-medium);
+  text-decoration: none;
+  border-bottom: 2px solid var(--color-border);
+}
+
+.Footer__link:hover {
+  background: var(--color-fg);
+  color: var(--color-bg);
+}
+
+/* ==========================================================================
+   Header
+   ========================================================================== */
+
+.Header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: var(--space-4) var(--space-5);
+  border-bottom: 2px solid var(--color-border);
+}
+
+.Header__brand {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-extrabold);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.Header__link {
+  color: var(--color-fg);
+  font-weight: var(--font-weight-medium);
+  text-decoration: none;
+  border-bottom: 2px solid var(--color-border);
+}
+
+.Header__link:hover {
+  background: var(--color-fg);
+  color: var(--color-bg);
+}
+
+/* ==========================================================================
+   Hero
+   ========================================================================== */
+
+.Hero {
+  max-width: 750px;
+  margin: 0 auto;
+  padding: var(--space-8) var(--space-5);
+  text-align: center;
+}
+
+.Hero__tag {
+  display: inline-block;
+  margin: 0 0 var(--space-6);
+  padding: var(--space-1) var(--space-3);
+  border: 2px solid var(--color-border);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.Hero__title {
+  margin: 0 0 var(--space-4);
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-extrabold);
+  line-height: var(--line-height-tight);
+  text-transform: uppercase;
+}
+
+.Hero__description {
+  margin: 0;
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-muted);
+}
+
+.Hero__link {
+  display: inline-block;
+  margin-top: var(--space-5);
+  color: var(--color-fg);
+  font-weight: var(--font-weight-medium);
+  text-decoration: none;
+  border-bottom: 2px solid var(--color-border);
+}
+
+.Hero__link:hover {
+  background: var(--color-fg);
+  color: var(--color-bg);
+}
+
+/* ==========================================================================
+   Install
+   ========================================================================== */
+
+.Install {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 var(--space-5) var(--space-8);
+  text-align: center;
+}
+
+.Install__title {
+  margin: 0 0 var(--space-4);
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-extrabold);
+  text-transform: uppercase;
+}
+
+.Install__codeWrap {
+  position: relative;
+  text-align: left;
+}
+
+.Install__copy {
+  position: absolute;
+  top: var(--space-3);
+  right: var(--space-3);
+  padding: var(--space-1) var(--space-3);
+  border: 2px solid var(--color-border);
+  background: var(--color-fg);
+  color: var(--color-bg);
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+}
+
+.Install__copy:hover {
+  background: var(--color-bg);
+  color: var(--color-fg);
+}
+
+.Install__code {
+  margin: 0;
+  padding: var(--space-5);
+  border: 2px solid var(--color-border);
+  overflow-x: auto;
+  font-size: var(--font-size-sm);
+  white-space: pre;
+}
+
+/* ==========================================================================
+   Components
+   ========================================================================== */
+
+.Components {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: var(--space-8) var(--space-5);
+}
+
+.Components__title {
+  margin: 0 0 var(--space-6);
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-extrabold);
+  text-transform: uppercase;
+}
+
+.Components__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: var(--space-5);
+}
+
+.ComponentCard {
+  padding: var(--space-5);
+  border: 2px solid var(--color-border);
+  cursor: pointer;
+}
+
+.ComponentCard--span-2 {
+  grid-column: span 2;
+}
+
+.ComponentCard--span-3 {
+  grid-column: span 3;
+}
+
+.ComponentCard:hover,
+.ComponentCard:focus-visible {
+  box-shadow: 4px 4px 0 var(--color-border);
+}
+
+.ComponentCard:focus-visible {
+  outline: none;
+}
+
+.ComponentCard__title {
+  margin: 0 0 var(--space-4);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-muted);
+}
+
+.ComponentCard__row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+/* ==========================================================================
+   Examples
+   ========================================================================== */
+
+.Examples {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: var(--space-8) var(--space-5);
+}
+
+.Examples__title {
+  margin: 0 0 var(--space-6);
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-extrabold);
+  text-transform: uppercase;
+}
+
+.Examples__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: start;
+  gap: var(--space-5);
+}
+
+@media (min-width: 960px) {
+  .Examples__grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+      "table    table    table"
+      "pricing  pricing  faq"
+      "form     profile  notification";
+  }
+
+  #table-demo {
+    grid-area: table;
+  }
+
+  #form-demo {
+    grid-area: form;
+  }
+
+  #pricing-demo {
+    grid-area: pricing;
+  }
+
+  #faq-demo {
+    grid-area: faq;
+  }
+
+  #profile-demo {
+    grid-area: profile;
+  }
+
+  #notification-demo {
+    grid-area: notification;
+  }
+}
+
+.ExampleCard {
+  padding: var(--space-5);
+  border: 2px solid var(--color-border);
+}
+
+.ExampleCard__title {
+  display: block;
+  margin: 0 0 var(--space-4);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-muted);
+}
+
+/* ==========================================================================
+   FormDemo
+   ========================================================================== */
+
+.FormDemo__form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.FormDemo__fieldset {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.FormDemo__legend {
+  padding: 0;
+  margin-bottom: var(--space-3);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.FormDemo__group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+}
+
+.FormDemo__actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--space-3);
+}
+
+/* ==========================================================================
+   TableDemo
+   ========================================================================== */
+
+.TableDemo__wrap {
+  overflow-x: auto;
+  border: 2px solid var(--color-border);
+}
+
+.TableDemo__user {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+/* ==========================================================================
+   FaqDemo
+   ========================================================================== */
+
+.FaqDemo__list {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ==========================================================================
+   PricingDemo
+   ========================================================================== */
+
+.PricingDemo__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--space-5);
+}
+
+/* ==========================================================================
+   NotificationDemo
+   ========================================================================== */
+
+.NotificationDemo__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+/* ==========================================================================
+   ProfileDemo
+   ========================================================================== */
+
+.ProfileDemo__header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+
+@media (max-width: 640px) {
+  .Hero__title {
+    font-size: var(--font-size-2xl);
+  }
+
+  .ComponentCard--span-2,
+  .ComponentCard--span-3 {
+    grid-column: span 1;
+  }
+}
