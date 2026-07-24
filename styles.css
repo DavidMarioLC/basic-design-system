@@ -874,6 +874,51 @@ body {
 }
 
 /* ==========================================================================
+   FaqDemo
+   ========================================================================== */
+
+.FaqDemo {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: var(--space-8) var(--space-5);
+}
+
+.FaqDemo__title {
+  margin: 0 0 var(--space-6);
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-extrabold);
+  text-transform: uppercase;
+}
+
+.FaqDemo__list {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ==========================================================================
+   PricingDemo
+   ========================================================================== */
+
+.PricingDemo {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: var(--space-8) var(--space-5);
+}
+
+.PricingDemo__title {
+  margin: 0 0 var(--space-6);
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-extrabold);
+  text-transform: uppercase;
+}
+
+.PricingDemo__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: var(--space-5);
+}
+
+/* ==========================================================================
    Modal
    ========================================================================== */
 

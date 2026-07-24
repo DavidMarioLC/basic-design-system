@@ -249,6 +249,35 @@ uso compuesto.
 - `.TableDemo__user` — fila interna (`display: flex`) que combina
   `.Avatar--sm` + nombre dentro de una celda `.Table__cell`.
 
+### FaqDemo (`.FaqDemo`)
+
+Sección de ejemplo (`#faq-demo`, en `index.html` después de `#table-demo`)
+que arma una FAQ apilando varios `.Accordion` — igual que `.FormDemo` y
+`.TableDemo`, no es un componente nuevo, es un caso de uso compuesto.
+
+- `.FaqDemo` — wrapper de la sección, mismo patrón que `.FormDemo` /
+  `.TableDemo`.
+- `.FaqDemo__list` — `display: flex; flex-direction: column`, sin gap: los
+  `.Accordion` quedan pegados uno debajo del otro (bordes duplicados en la
+  unión, consistente con el peso visual brutalista) en vez de usar gap, que
+  ya causó un bug de borde visible en la card de demo de `.Accordion` (ver
+  sección `.Accordion`).
+
+### PricingDemo (`.PricingDemo`)
+
+Sección de ejemplo (`#pricing-demo`, en `index.html` después de
+`#faq-demo`) que arma tres planes de precio combinando `.Card`, `.Badge` y
+`.Button` — mismo espíritu compuesto que las demos anteriores.
+
+- `.PricingDemo` — wrapper de la sección.
+- `.PricingDemo__grid` — `display: grid`,
+  `grid-template-columns: repeat(auto-fit, minmax(220px, 1fr))`, para que
+  los planes se acomoden en filas según el ancho disponible sin media
+  queries adicionales.
+- El plan destacado usa `.Badge--inverted` ("Popular") antes del título —
+  la diferenciación es por texto/contraste, no por color de acento, mismo
+  principio que `.Alert`.
+
 ### Patrón: modal de preview + código
 
 Cada `.ComponentCard` es clicable (y focuseable con teclado). Al activarla,
