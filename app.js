@@ -1,4 +1,17 @@
 document.addEventListener('DOMContentLoaded', () => {
+  const installCopy = document.querySelector('.Install__copy');
+  const installCode = document.querySelector('.Install__code code');
+
+  if (installCopy && installCode) {
+    installCopy.addEventListener('click', async () => {
+      await navigator.clipboard.writeText(installCode.textContent);
+      installCopy.textContent = 'Copied!';
+      setTimeout(() => {
+        installCopy.textContent = 'Copy';
+      }, 1500);
+    });
+  }
+
   const modal = document.getElementById('componentModal');
   const modalTitle = modal.querySelector('.Modal__title');
   const modalPreview = modal.querySelector('.Modal__preview');
