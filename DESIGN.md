@@ -154,6 +154,22 @@ navegador.
   (no puede ir dentro de `<summary>`); se muestra/oculta automáticamente por
   el navegador según el estado `open`.
 
+### Table (`.Table`)
+
+`<table>` nativa reestilada: `border-collapse: collapse`, sin líneas
+verticales (solo bordes horizontales duros entre filas), consistente con el
+resto del sistema donde la jerarquía se marca con borde y peso de fuente,
+no con color de fondo alterno (zebra stripes).
+
+- `.Table` — `width: 100%`, `border-collapse: collapse`.
+- `.Table__head` — `<thead>`; borde inferior duro de 2px que separa el
+  encabezado del cuerpo.
+- `.Table__heading` — `<th>`; texto en mayúsculas, bold, alineado a la
+  izquierda.
+- `.Table__row` — `<tr>` del cuerpo; borde inferior duro de 2px, salvo la
+  última fila (`:last-child`).
+- `.Table__cell` — `<td>`.
+
 ### Patrón: modal de preview + código
 
 Cada `.ComponentCard` es clicable (y focuseable con teclado). Al activarla,

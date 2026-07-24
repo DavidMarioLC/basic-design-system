@@ -640,6 +640,40 @@ body {
 }
 
 /* ==========================================================================
+   Table
+   ========================================================================== */
+
+.Table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--font-size-sm);
+}
+
+.Table__head {
+  border-bottom: 2px solid var(--color-border);
+}
+
+.Table__heading {
+  padding: var(--space-2) var(--space-3);
+  font-weight: var(--font-weight-bold);
+  text-align: left;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.Table__row {
+  border-bottom: 2px solid var(--color-border);
+}
+
+.Table__row:last-child {
+  border-bottom: none;
+}
+
+.Table__cell {
+  padding: var(--space-2) var(--space-3);
+}
+
+/* ==========================================================================
    Modal
    ========================================================================== */
 
