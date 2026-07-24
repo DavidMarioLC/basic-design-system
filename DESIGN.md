@@ -188,6 +188,23 @@ rotando con `@keyframes Spinner-spin`.
   de quitarla del todo (sigue comunicando "cargando", pero sin el parpadeo
   agresivo de una rotación rápida).
 
+### Alert (`.Alert`)
+
+Caja de aviso con borde duro. Sigue el principio de "sin color de acento"
+del sistema: la variante no se distingue por hue (rojo/verde/amarillo) sino
+por contraste — `.Alert--inverted` invierte fg/bg, mismo patrón que
+`.Button--secondary` / `.Badge--inverted` — y por el texto (`Alert__icon`,
+`Alert__title`).
+
+- `.Alert` — `display: flex`, icono + contenido; `width: 100%` para apilar
+  dentro de `.ComponentCard__row` igual que `.Accordion`.
+- `.Alert__icon` — símbolo o carácter (ej: `!`), bold.
+- `.Alert__title` — encabezado corto, mayúsculas, bold.
+- `.Alert__message` — cuerpo del mensaje, `--color-muted` (o
+  `--color-gray-400` dentro de `.Alert--inverted`, ya que `--color-muted`
+  no tiene suficiente contraste sobre fondo invertido).
+- `.Alert--inverted` — invierte fg/bg.
+
 ### Patrón: modal de preview + código
 
 Cada `.ComponentCard` es clicable (y focuseable con teclado). Al activarla,

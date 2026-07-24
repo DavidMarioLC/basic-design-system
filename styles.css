@@ -719,6 +719,45 @@ body {
 }
 
 /* ==========================================================================
+   Alert
+   ========================================================================== */
+
+.Alert {
+  display: flex;
+  gap: var(--space-3);
+  width: 100%;
+  padding: var(--space-4);
+  border: 2px solid var(--color-border);
+  background: var(--color-bg);
+  color: var(--color-fg);
+}
+
+.Alert__icon {
+  font-weight: var(--font-weight-extrabold);
+}
+
+.Alert__title {
+  margin: 0 0 var(--space-1);
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.Alert__message {
+  margin: 0;
+  color: var(--color-muted);
+}
+
+.Alert--inverted {
+  background: var(--color-fg);
+  color: var(--color-bg);
+}
+
+.Alert--inverted .Alert__message {
+  color: var(--color-gray-400);
+}
+
+/* ==========================================================================
    Modal
    ========================================================================== */
 
