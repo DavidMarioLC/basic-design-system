@@ -1,35 +1,35 @@
 # Basic Design System
 
-Sistema de diseño brutalista, estático y sin dependencias: crudo, sin adornos,
-alto contraste. Sin color de acento — la jerarquía se construye con
-negro/blanco/gris y tipografía monoespaciada (JetBrains Mono).
+A static, framework-free brutalist design system: raw, unadorned,
+high-contrast. No accent color — hierarchy comes from black/white/gray and
+monospace typography (JetBrains Mono).
 
-Solo HTML/CSS/JS plano. Sin build step, sin package manager, sin frameworks.
+Just plain HTML/CSS/JS. No build step, no package manager, no frameworks.
 
-## Estructura
+## Structure
 
-- `styles.css` — el sistema de diseño exportable: design tokens (`--color-*`,
-  `--font-*`, `--space-*`, etc.) como custom properties en `:root`, más los
-  componentes reutilizables (Button, Input, Card, Modal, ...). Es la única
-  hoja de estilos pensada para consumirse externamente (ej. vía CDN).
-- `site.css` — estilos privados de esta landing page (Header, Hero, Install,
-  grilla de Components, sección Examples y sus demos). No forma parte de la
-  superficie pública del sistema de diseño.
-- `index.html` — página que consume los tokens/componentes de `styles.css` y
-  los estilos propios de `site.css`.
-- `app.js` — JS vanilla sin dependencias. Controla la grilla `#components`:
-  al hacer clic en una `.ComponentCard` abre un `<dialog>` (`.Modal`) con una
-  vista previa en vivo y el snippet HTML copiable de esa tarjeta.
-- `DESIGN.md` — fuente de verdad de los principios, tokens y convenciones del
-  sistema de diseño (en español). Léelo antes de agregar tokens o
-  componentes nuevos.
+- `styles.css` — the exportable design system: design tokens (`--color-*`,
+  `--font-*`, `--space-*`, etc.) as custom properties on `:root`, plus the
+  reusable component styles (Button, Input, Card, Modal, ...). This is the
+  only stylesheet meant to be consumed externally (e.g. via CDN).
+- `site.css` — styling private to this landing page (Header, Hero, Install,
+  Components grid, Examples section and its demos). Not part of the design
+  system's public surface.
+- `index.html` — single page consuming the tokens/components from
+  `styles.css` and the page-specific styles from `site.css`.
+- `app.js` — vanilla JS, no dependencies. Wires the `#components` grid:
+  clicking a `.ComponentCard` opens a `<dialog>` (`.Modal`) with a live
+  preview and the copy-pasteable HTML snippet from that card.
+- `DESIGN.md` (Spanish) — the source of truth for the design system's
+  principles, tokens, and conventions. Read it before adding tokens or
+  components.
 
-## Convenciones
+## Conventions
 
-- **Tokens**: `--{categoría}-{variante}` (ej. `--color-gray-500`,
-  `--font-size-lg`, `--space-4`). Los componentes deben consumir tokens vía
-  `var(--token-name)`, nunca valores crudos.
-- **Clases CSS**: BEM con bloque en PascalCase — `.Block`, `.Block__element`,
-  `.Block--modifier`. Un bloque nunca depende de los estilos de otro.
+- **Tokens**: `--{category}-{variant}` (e.g. `--color-gray-500`,
+  `--font-size-lg`, `--space-4`). Components must consume tokens via
+  `var(--token-name)`, never raw values.
+- **CSS classes**: BEM with a capitalized block — `.Block`, `.Block__element`,
+  `.Block--modifier`. A block must never depend on another block's styles.
 
-Ver `DESIGN.md` para el detalle completo de tokens y componentes.
+See `DESIGN.md` for the full detail on tokens and components.
