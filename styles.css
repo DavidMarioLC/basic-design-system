@@ -758,6 +758,58 @@ body {
 }
 
 /* ==========================================================================
+   FormDemo
+   ========================================================================== */
+
+.FormDemo {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: var(--space-8) var(--space-5);
+}
+
+.FormDemo__title {
+  margin: 0 0 var(--space-6);
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-extrabold);
+  text-transform: uppercase;
+}
+
+.FormDemo__form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  padding: var(--space-5);
+  border: 2px solid var(--color-border);
+}
+
+.FormDemo__fieldset {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.FormDemo__legend {
+  padding: 0;
+  margin-bottom: var(--space-3);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.FormDemo__group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+}
+
+.FormDemo__actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--space-3);
+}
+
+/* ==========================================================================
    Modal
    ========================================================================== */
 

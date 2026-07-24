@@ -205,6 +205,24 @@ por contraste — `.Alert--inverted` invierte fg/bg, mismo patrón que
   no tiene suficiente contraste sobre fondo invertido).
 - `.Alert--inverted` — invierte fg/bg.
 
+### FormDemo (`.FormDemo`)
+
+Sección de ejemplo (`#form-demo`, en `index.html` después de `#components`)
+que arma un formulario de registro real combinando los componentes del
+sistema (`.Input`, `.Select`, `.Radio`, `.Slider`, `.Checkbox`, `.Button`) —
+no es un componente nuevo del sistema, es un caso de uso compuesto que
+demuestra cómo se ven juntos en un flujo real.
+
+- `.FormDemo` — wrapper de la sección, mismo ancho máximo que `.Hero`.
+- `.FormDemo__form` — `<form>`, `display: flex; flex-direction: column`,
+  borde duro (mismo lenguaje visual que `.ComponentCard`).
+- `.FormDemo__fieldset` / `.FormDemo__legend` — resetean el `<fieldset>`
+  nativo (sin borde/padding) y estilizan el `<legend>` como un label más
+  (mayúsculas, bold), usados para agrupar el radio "Plan".
+- `.FormDemo__group` — fila con gap para agrupar inputs relacionados
+  (radios, checkboxes).
+- `.FormDemo__actions` — alinea los botones de acción a la derecha.
+
 ### Patrón: modal de preview + código
 
 Cada `.ComponentCard` es clicable (y focuseable con teclado). Al activarla,

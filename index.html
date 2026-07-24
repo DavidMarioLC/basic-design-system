@@ -310,6 +310,67 @@
         </div>
     </section>
 
+    <section class="FormDemo" id="form-demo">
+        <h2 class="FormDemo__title">Example: Sign up</h2>
+        <form class="FormDemo__form">
+            <label class="Input">
+                <span class="Input__label">Name</span>
+                <input class="Input__field" type="text" name="name" placeholder="Ada Lovelace">
+            </label>
+
+            <label class="Input">
+                <span class="Input__label">Email</span>
+                <input class="Input__field" type="email" name="email" placeholder="ada@example.com">
+            </label>
+
+            <label class="Select">
+                <span class="Select__label">Country</span>
+                <div class="Select__control">
+                    <select class="Select__field" name="country">
+                        <option>Argentina</option>
+                        <option>Brazil</option>
+                        <option>Chile</option>
+                    </select>
+                </div>
+            </label>
+
+            <fieldset class="FormDemo__fieldset">
+                <legend class="FormDemo__legend">Plan</legend>
+                <div class="FormDemo__group">
+                    <label class="Radio">
+                        <input class="Radio__input" type="radio" name="plan" value="free" checked>
+                        <span class="Radio__label">Free</span>
+                    </label>
+                    <label class="Radio">
+                        <input class="Radio__input" type="radio" name="plan" value="pro">
+                        <span class="Radio__label">Pro</span>
+                    </label>
+                </div>
+            </fieldset>
+
+            <label class="Slider">
+                <span class="Slider__label">Team size</span>
+                <input class="Slider__field" type="range" name="team-size" min="1" max="20" value="5">
+            </label>
+
+            <div class="FormDemo__group">
+                <label class="Checkbox">
+                    <input class="Checkbox__input" type="checkbox" name="newsletter" checked>
+                    <span class="Checkbox__label">Subscribe to newsletter</span>
+                </label>
+                <label class="Checkbox">
+                    <input class="Checkbox__input" type="checkbox" name="terms" required>
+                    <span class="Checkbox__label">I accept the terms</span>
+                </label>
+            </div>
+
+            <div class="FormDemo__actions">
+                <button class="Button Button--secondary" type="reset">Reset</button>
+                <button class="Button" type="submit">Sign up</button>
+            </div>
+        </form>
+    </section>
+
     <dialog class="Modal" id="componentModal">
         <div class="Modal__header">
             <span class="Modal__title"></span>
