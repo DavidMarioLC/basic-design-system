@@ -175,6 +175,19 @@ no con color de fondo alterno (zebra stripes).
   última fila (`:last-child`).
 - `.Table__cell` — `<td>`.
 
+### Spinner (`.Spinner`)
+
+Indicador de carga en CSS puro (sin JS): un cuadrado (no círculo — consistente
+con el resto del sistema, que evita `border-radius`) con un borde grueso donde
+un lado (`border-top-color`) usa `--color-fg` y el resto `--color-muted`,
+rotando con `@keyframes Spinner-spin`.
+
+- `.Spinner` — `24×24` por defecto, `border-width: 3px`.
+- `.Spinner--sm` / `.Spinner--lg` — modificadores de tamaño (`16px` / `40px`).
+- Respeta `prefers-reduced-motion: reduce` ralentizando la animación en vez
+  de quitarla del todo (sigue comunicando "cargando", pero sin el parpadeo
+  agresivo de una rotación rápida).
+
 ### Patrón: modal de preview + código
 
 Cada `.ComponentCard` es clicable (y focuseable con teclado). Al activarla,
