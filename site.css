@@ -398,6 +398,10 @@
    ========================================================================== */
 
 @media (max-width: 640px) {
+  .Header__brand {
+    font-size: var(--font-size-base);
+  }
+
   .Hero__title {
     font-size: var(--font-size-2xl);
   }
