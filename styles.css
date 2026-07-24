@@ -844,6 +844,34 @@ body {
 }
 
 /* ==========================================================================
+   TableDemo
+   ========================================================================== */
+
+.TableDemo {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: var(--space-8) var(--space-5);
+}
+
+.TableDemo__title {
+  margin: 0 0 var(--space-6);
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-extrabold);
+  text-transform: uppercase;
+}
+
+.TableDemo__wrap {
+  overflow-x: auto;
+  border: 2px solid var(--color-border);
+}
+
+.TableDemo__user {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+/* ==========================================================================
    Modal
    ========================================================================== */
 

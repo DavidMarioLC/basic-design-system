@@ -236,6 +236,19 @@ demuestra cómo se ven juntos en un flujo real.
   (radios, checkboxes).
 - `.FormDemo__actions` — alinea los botones de acción a la derecha.
 
+### TableDemo (`.TableDemo`)
+
+Sección de ejemplo (`#table-demo`, en `index.html` después de `#form-demo`)
+que arma una lista de usuarios combinando `.Table`, `.Avatar` y `.Badge` —
+igual que `.FormDemo`, no es un componente nuevo del sistema sino un caso de
+uso compuesto.
+
+- `.TableDemo` — wrapper de la sección, mismo patrón que `.FormDemo`.
+- `.TableDemo__wrap` — borde duro alrededor de la `.Table` (la tabla en sí
+  no tiene borde exterior propio, solo divisores horizontales).
+- `.TableDemo__user` — fila interna (`display: flex`) que combina
+  `.Avatar--sm` + nombre dentro de una celda `.Table__cell`.
+
 ### Patrón: modal de preview + código
 
 Cada `.ComponentCard` es clicable (y focuseable con teclado). Al activarla,
