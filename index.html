@@ -329,155 +329,197 @@
         </div>
     </section>
 
-    <section class="FormDemo" id="form-demo">
-        <h2 class="FormDemo__title">Example: Sign up</h2>
-        <form class="FormDemo__form">
-            <label class="Input">
-                <span class="Input__label">Name</span>
-                <input class="Input__field" type="text" name="name" placeholder="Ada Lovelace">
-            </label>
-
-            <label class="Input">
-                <span class="Input__label">Email</span>
-                <input class="Input__field" type="email" name="email" placeholder="ada@example.com">
-            </label>
-
-            <label class="Select">
-                <span class="Select__label">Country</span>
-                <div class="Select__control">
-                    <select class="Select__field" name="country">
-                        <option>Argentina</option>
-                        <option>Brazil</option>
-                        <option>Chile</option>
-                    </select>
+    <section class="Examples" id="examples">
+        <h2 class="Examples__title">Examples</h2>
+        <div class="Examples__grid">
+            <div class="ExampleCard" id="table-demo">
+                <span class="ExampleCard__title">User list</span>
+                <div class="TableDemo__wrap">
+                    <table class="Table">
+                        <thead class="Table__head">
+                            <tr>
+                                <th class="Table__heading">User</th>
+                                <th class="Table__heading">Role</th>
+                                <th class="Table__heading">Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="Table__row">
+                                <td class="Table__cell">
+                                    <div class="TableDemo__user">
+                                        <span class="Avatar Avatar--sm">JD</span>
+                                        <span>John Doe</span>
+                                    </div>
+                                </td>
+                                <td class="Table__cell">Admin</td>
+                                <td class="Table__cell"><span class="Badge Badge--inverted">Active</span></td>
+                            </tr>
+                            <tr class="Table__row">
+                                <td class="Table__cell">
+                                    <div class="TableDemo__user">
+                                        <span class="Avatar Avatar--sm">JS</span>
+                                        <span>Jane Smith</span>
+                                    </div>
+                                </td>
+                                <td class="Table__cell">Editor</td>
+                                <td class="Table__cell"><span class="Badge">Pending</span></td>
+                            </tr>
+                            <tr class="Table__row">
+                                <td class="Table__cell">
+                                    <div class="TableDemo__user">
+                                        <span class="Avatar Avatar--sm">AT</span>
+                                        <span>Alan Turing</span>
+                                    </div>
+                                </td>
+                                <td class="Table__cell">Viewer</td>
+                                <td class="Table__cell"><span class="Badge">Pending</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
-            </label>
+            </div>
 
-            <fieldset class="FormDemo__fieldset">
-                <legend class="FormDemo__legend">Plan</legend>
-                <div class="FormDemo__group">
-                    <label class="Radio">
-                        <input class="Radio__input" type="radio" name="plan" value="free" checked>
-                        <span class="Radio__label">Free</span>
+            <div class="ExampleCard" id="form-demo">
+                <span class="ExampleCard__title">Sign up form</span>
+                <form class="FormDemo__form">
+                    <label class="Input">
+                        <span class="Input__label">Name</span>
+                        <input class="Input__field" type="text" name="name" placeholder="Ada Lovelace">
                     </label>
-                    <label class="Radio">
-                        <input class="Radio__input" type="radio" name="plan" value="pro">
-                        <span class="Radio__label">Pro</span>
+
+                    <label class="Input">
+                        <span class="Input__label">Email</span>
+                        <input class="Input__field" type="email" name="email" placeholder="ada@example.com">
                     </label>
-                </div>
-            </fieldset>
 
-            <label class="Slider">
-                <span class="Slider__label">Team size</span>
-                <input class="Slider__field" type="range" name="team-size" min="1" max="20" value="5">
-            </label>
+                    <label class="Select">
+                        <span class="Select__label">Country</span>
+                        <div class="Select__control">
+                            <select class="Select__field" name="country">
+                                <option>Argentina</option>
+                                <option>Brazil</option>
+                                <option>Chile</option>
+                            </select>
+                        </div>
+                    </label>
 
-            <div class="FormDemo__group">
-                <label class="Checkbox">
-                    <input class="Checkbox__input" type="checkbox" name="newsletter" checked>
-                    <span class="Checkbox__label">Subscribe to newsletter</span>
-                </label>
-                <label class="Checkbox">
-                    <input class="Checkbox__input" type="checkbox" name="terms" required>
-                    <span class="Checkbox__label">I accept the terms</span>
-                </label>
+                    <fieldset class="FormDemo__fieldset">
+                        <legend class="FormDemo__legend">Plan</legend>
+                        <div class="FormDemo__group">
+                            <label class="Radio">
+                                <input class="Radio__input" type="radio" name="plan" value="free" checked>
+                                <span class="Radio__label">Free</span>
+                            </label>
+                            <label class="Radio">
+                                <input class="Radio__input" type="radio" name="plan" value="pro">
+                                <span class="Radio__label">Pro</span>
+                            </label>
+                        </div>
+                    </fieldset>
+
+                    <label class="Slider">
+                        <span class="Slider__label">Team size</span>
+                        <input class="Slider__field" type="range" name="team-size" min="1" max="20" value="5">
+                    </label>
+
+                    <div class="FormDemo__group">
+                        <label class="Checkbox">
+                            <input class="Checkbox__input" type="checkbox" name="newsletter" checked>
+                            <span class="Checkbox__label">Subscribe to newsletter</span>
+                        </label>
+                        <label class="Checkbox">
+                            <input class="Checkbox__input" type="checkbox" name="terms" required>
+                            <span class="Checkbox__label">I accept the terms</span>
+                        </label>
+                    </div>
+
+                    <div class="FormDemo__actions">
+                        <button class="Button Button--secondary" type="reset">Reset</button>
+                        <button class="Button" type="submit">Sign up</button>
+                    </div>
+                </form>
             </div>
 
-            <div class="FormDemo__actions">
-                <button class="Button Button--secondary" type="reset">Reset</button>
-                <button class="Button" type="submit">Sign up</button>
-            </div>
-        </form>
-    </section>
-
-    <section class="TableDemo" id="table-demo">
-        <h2 class="TableDemo__title">Example: User list</h2>
-        <div class="TableDemo__wrap">
-            <table class="Table">
-                <thead class="Table__head">
-                    <tr>
-                        <th class="Table__heading">User</th>
-                        <th class="Table__heading">Role</th>
-                        <th class="Table__heading">Status</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr class="Table__row">
-                        <td class="Table__cell">
-                            <div class="TableDemo__user">
-                                <span class="Avatar Avatar--sm">JD</span>
-                                <span>John Doe</span>
-                            </div>
-                        </td>
-                        <td class="Table__cell">Admin</td>
-                        <td class="Table__cell"><span class="Badge Badge--inverted">Active</span></td>
-                    </tr>
-                    <tr class="Table__row">
-                        <td class="Table__cell">
-                            <div class="TableDemo__user">
-                                <span class="Avatar Avatar--sm">JS</span>
-                                <span>Jane Smith</span>
-                            </div>
-                        </td>
-                        <td class="Table__cell">Editor</td>
-                        <td class="Table__cell"><span class="Badge">Pending</span></td>
-                    </tr>
-                    <tr class="Table__row">
-                        <td class="Table__cell">
-                            <div class="TableDemo__user">
-                                <span class="Avatar Avatar--sm">AT</span>
-                                <span>Alan Turing</span>
-                            </div>
-                        </td>
-                        <td class="Table__cell">Viewer</td>
-                        <td class="Table__cell"><span class="Badge">Pending</span></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </section>
-
-    <section class="FaqDemo" id="faq-demo">
-        <h2 class="FaqDemo__title">Example: FAQ</h2>
-        <div class="FaqDemo__list">
-            <details class="Accordion" open>
-                <summary class="Accordion__summary">What is this design system?</summary>
-                <div class="Accordion__content">A static, framework-free collection of brutalist components — raw, unadorned, and high-contrast.</div>
-            </details>
-            <details class="Accordion">
-                <summary class="Accordion__summary">Does it require a build step?</summary>
-                <div class="Accordion__content">No. It's just index.html, styles.css, and app.js — open it directly or serve it as static files.</div>
-            </details>
-            <details class="Accordion">
-                <summary class="Accordion__summary">Can I use it with a framework?</summary>
-                <div class="Accordion__content">Yes. The classes are plain CSS, so they work the same whether you're using vanilla HTML or a component framework.</div>
-            </details>
-        </div>
-    </section>
-
-    <section class="PricingDemo" id="pricing-demo">
-        <h2 class="PricingDemo__title">Example: Pricing</h2>
-        <div class="PricingDemo__grid">
-            <div class="Card">
-                <h3 class="Card__title">Basic</h3>
-                <p class="Card__description">For individuals getting started.</p>
-                <div class="Card__footer">
-                    <button class="Button Button--secondary">Choose plan</button>
+            <div class="ExampleCard" id="pricing-demo">
+                <span class="ExampleCard__title">Pricing</span>
+                <div class="PricingDemo__grid">
+                    <div class="Card">
+                        <h3 class="Card__title">Basic</h3>
+                        <p class="Card__description">For individuals getting started.</p>
+                        <div class="Card__footer">
+                            <button class="Button Button--secondary">Choose plan</button>
+                        </div>
+                    </div>
+                    <div class="Card">
+                        <span class="Badge Badge--inverted">Popular</span>
+                        <h3 class="Card__title">Pro</h3>
+                        <p class="Card__description">For teams that need more room to grow.</p>
+                        <div class="Card__footer">
+                            <button class="Button">Choose plan</button>
+                        </div>
+                    </div>
+                    <div class="Card">
+                        <h3 class="Card__title">Enterprise</h3>
+                        <p class="Card__description">For organizations with custom needs.</p>
+                        <div class="Card__footer">
+                            <button class="Button Button--secondary">Contact us</button>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="Card">
-                <span class="Badge Badge--inverted">Popular</span>
-                <h3 class="Card__title">Pro</h3>
-                <p class="Card__description">For teams that need more room to grow.</p>
-                <div class="Card__footer">
-                    <button class="Button">Choose plan</button>
+
+            <div class="ExampleCard" id="faq-demo">
+                <span class="ExampleCard__title">FAQ</span>
+                <div class="FaqDemo__list">
+                    <details class="Accordion" open>
+                        <summary class="Accordion__summary">What is this design system?</summary>
+                        <div class="Accordion__content">A static, framework-free collection of brutalist components — raw, unadorned, and high-contrast.</div>
+                    </details>
+                    <details class="Accordion">
+                        <summary class="Accordion__summary">Does it require a build step?</summary>
+                        <div class="Accordion__content">No. It's just index.html, styles.css, and app.js — open it directly or serve it as static files.</div>
+                    </details>
+                    <details class="Accordion">
+                        <summary class="Accordion__summary">Can I use it with a framework?</summary>
+                        <div class="Accordion__content">Yes. The classes are plain CSS, so they work the same whether you're using vanilla HTML or a component framework.</div>
+                    </details>
                 </div>
             </div>
-            <div class="Card">
-                <h3 class="Card__title">Enterprise</h3>
-                <p class="Card__description">For organizations with custom needs.</p>
-                <div class="Card__footer">
-                    <button class="Button Button--secondary">Contact us</button>
+
+            <div class="ExampleCard" id="profile-demo">
+                <span class="ExampleCard__title">Profile card</span>
+                <div class="Card">
+                    <div class="ProfileDemo__header">
+                        <span class="Avatar">JD</span>
+                        <div>
+                            <h3 class="Card__title">Jane Doe</h3>
+                            <span class="Badge Badge--inverted">Admin</span>
+                        </div>
+                    </div>
+                    <p class="Card__description">Product designer focused on brutalist interfaces.</p>
+                    <div class="Card__footer">
+                        <button class="Button Button--secondary">View profile</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="ExampleCard" id="notification-demo">
+                <span class="ExampleCard__title">Notifications</span>
+                <div class="NotificationDemo__list">
+                    <div class="Alert">
+                        <span class="Alert__icon">!</span>
+                        <div>
+                            <p class="Alert__title">Deploy started</p>
+                            <p class="Alert__message">Building version 1.2.0.</p>
+                        </div>
+                    </div>
+                    <div class="Alert Alert--inverted">
+                        <span class="Alert__icon">!</span>
+                        <div>
+                            <p class="Alert__title">Deploy finished</p>
+                            <p class="Alert__message">Version 1.2.0 is live.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

@@ -218,65 +218,96 @@ forma parte del sistema de componentes en sí.
 - `.Card__footer` — fila de acciones (ej: un `.Button`), con margen
   superior para separarla del contenido.
 
-### FormDemo (`.FormDemo`)
+### Examples (`.Examples`)
 
-Sección de ejemplo (`#form-demo`, en `index.html` después de `#components`)
-que arma un formulario de registro real combinando los componentes del
-sistema (`.Input`, `.Select`, `.Radio`, `.Slider`, `.Checkbox`, `.Button`) —
-no es un componente nuevo del sistema, es un caso de uso compuesto que
-demuestra cómo se ven juntos en un flujo real.
+Sección (`#examples`, en `index.html` después de `#components`) que agrupa
+todos los casos de uso compuestos en una grilla tipo mosaico — mismo patrón
+que `.Components__grid` — en vez de que cada ejemplo ocupe una sección de
+ancho completo apilada verticalmente.
 
-- `.FormDemo` — wrapper de la sección, mismo ancho máximo que `.Hero`.
-- `.FormDemo__form` — `<form>`, `display: flex; flex-direction: column`,
-  borde duro (mismo lenguaje visual que `.ComponentCard`).
-- `.FormDemo__fieldset` / `.FormDemo__legend` — resetean el `<fieldset>`
-  nativo (sin borde/padding) y estilizan el `<legend>` como un label más
-  (mayúsculas, bold), usados para agrupar el radio "Plan".
-- `.FormDemo__group` — fila con gap para agrupar inputs relacionados
-  (radios, checkboxes).
-- `.FormDemo__actions` — alinea los botones de acción a la derecha.
+- `.Examples` — wrapper de la sección, mismo ancho máximo que `.Components`.
+- `.Examples__grid` — mobile-first: `grid-template-columns: 1fr` (los
+  ejemplos se apilan en el orden del DOM). Desde `@media (min-width: 960px)`
+  pasa a `grid-template-columns: repeat(3, 1fr)` con `grid-template-areas`
+  explícito — la posición de cada tile ya no depende del orden en el DOM ni
+  de cuánto "pese" en unidades de columna, se declara directamente en el
+  mapa de áreas:
+  ```
+  "table    table    table"
+  "pricing  pricing  faq"
+  "form     profile  notification"
+  ```
+  Cada `.ExampleCard` se asigna a su área vía selector de `id`
+  (`#table-demo { grid-area: table; }`, etc., en `styles.css`) — un caso
+  puntual donde se usa `id` en vez de una clase modificadora porque cada
+  tile del mosaico es único (no hay dos "User list" que reutilicen la misma
+  regla). Esto reemplaza el enfoque anterior basado en `.ExampleCard--wide`
+  (`grid-column: span 2`) + orden del DOM, que era fràgil: para lograr que
+  `Pricing` quedara debajo de `User list` había que reordenar el DOM, lo que
+  de paso movía otros ejemplos (como el formulario) de su lugar. Con
+  `grid-template-areas` el orden en el DOM puede seguir cualquier criterio
+  de lectura lógico (`Sign up form`, `FAQ`, `Profile card`,
+  `Notifications`, `User list`, `Pricing`, en ese orden en el HTML) sin
+  afectar dónde aparece cada tile visualmente.
+- `.ExampleCard` — el "tile" del mosaico: borde duro + padding, mismo
+  lenguaje visual que `.ComponentCard` (pero sin el comportamiento de click
+  para abrir el modal — estos son ejemplos completos, no snippets
+  individuales).
+- `.ExampleCard__title` — encabezado del tile, mismo estilo que
+  `.ComponentCard__title`.
 
-### TableDemo (`.TableDemo`)
+Cada ejemplo compuesto vive dentro de un `.ExampleCard` y conserva sus
+propias clases internas (no son componentes del sistema, son wrappers de
+layout para ese caso de uso puntual). Debajo de 960px la grilla vuelve a
+una sola columna y el orden visual es simplemente el orden del DOM. Con
+este mapa de áreas la grilla de 3 columnas queda completamente llena sin
+huecos: `User list` ocupa toda la fila 1 (3 columnas), `Pricing` (2
+columnas) + `FAQ` (1 columna) llenan la fila 2, y `Sign up form` +
+`Profile card` + `Notifications` (1 columna cada uno) llenan la fila 3 —
+3+3+3=9 celdas, todas usadas. Al ser `grid-template-areas` explícito,
+cambiar cuál ejemplo va full-width o con quién se empareja cada uno es solo
+cuestión de reordenar el mapa de áreas — no requiere tocar el HTML. Si un ejemplo de ancho normal muy alto (ej: el formulario)
+quedara en la misma fila que uno bajo, `align-items: start` en
+`.Examples__grid` evita que la card corta se estire para llenar el alto de
+la fila.
 
-Sección de ejemplo (`#table-demo`, en `index.html` después de `#form-demo`)
-que arma una lista de usuarios combinando `.Table`, `.Avatar` y `.Badge` —
-igual que `.FormDemo`, no es un componente nuevo del sistema sino un caso de
-uso compuesto.
-
-- `.TableDemo` — wrapper de la sección, mismo patrón que `.FormDemo`.
-- `.TableDemo__wrap` — borde duro alrededor de la `.Table` (la tabla en sí
-  no tiene borde exterior propio, solo divisores horizontales).
-- `.TableDemo__user` — fila interna (`display: flex`) que combina
-  `.Avatar--sm` + nombre dentro de una celda `.Table__cell`.
-
-### FaqDemo (`.FaqDemo`)
-
-Sección de ejemplo (`#faq-demo`, en `index.html` después de `#table-demo`)
-que arma una FAQ apilando varios `.Accordion` — igual que `.FormDemo` y
-`.TableDemo`, no es un componente nuevo, es un caso de uso compuesto.
-
-- `.FaqDemo` — wrapper de la sección, mismo patrón que `.FormDemo` /
-  `.TableDemo`.
-- `.FaqDemo__list` — `display: flex; flex-direction: column`, sin gap: los
-  `.Accordion` quedan pegados uno debajo del otro (bordes duplicados en la
-  unión, consistente con el peso visual brutalista) en vez de usar gap, que
-  ya causó un bug de borde visible en la card de demo de `.Accordion` (ver
-  sección `.Accordion`).
-
-### PricingDemo (`.PricingDemo`)
-
-Sección de ejemplo (`#pricing-demo`, en `index.html` después de
-`#faq-demo`) que arma tres planes de precio combinando `.Card`, `.Badge` y
-`.Button` — mismo espíritu compuesto que las demos anteriores.
-
-- `.PricingDemo` — wrapper de la sección.
-- `.PricingDemo__grid` — `display: grid`,
-  `grid-template-columns: repeat(auto-fit, minmax(220px, 1fr))`, para que
-  los planes se acomoden en filas según el ancho disponible sin media
-  queries adicionales.
-- El plan destacado usa `.Badge--inverted` ("Popular") antes del título —
-  la diferenciación es por texto/contraste, no por color de acento, mismo
-  principio que `.Alert`.
+- **User list** (`#table-demo`) — combina `.Table`, `.Avatar`, `.Badge`.
+  - `.TableDemo__wrap` — borde duro alrededor de la `.Table` (la tabla en sí
+    no tiene borde exterior propio, solo divisores horizontales).
+  - `.TableDemo__user` — fila interna (`display: flex`) que combina
+    `.Avatar--sm` + nombre dentro de una celda `.Table__cell`.
+- **Sign up form** (`#form-demo`) — combina `.Input`, `.Select`, `.Radio`,
+  `.Slider`, `.Checkbox`, `.Button`.
+  - `.FormDemo__form` — `<form>`, `display: flex; flex-direction: column`.
+  - `.FormDemo__fieldset` / `.FormDemo__legend` — resetean el `<fieldset>`
+    nativo (sin borde/padding) y estilizan el `<legend>` como un label más
+    (mayúsculas, bold), usados para agrupar el radio "Plan".
+  - `.FormDemo__group` — fila con gap para agrupar inputs relacionados
+    (radios, checkboxes).
+  - `.FormDemo__actions` — alinea los botones de acción a la derecha.
+- **Pricing** (`#pricing-demo`) — combina `.Card`, `.Badge`, `.Button`.
+  - `.PricingDemo__grid` — `display: grid`,
+    `grid-template-columns: repeat(auto-fit, minmax(220px, 1fr))`, para que
+    los planes se acomoden en filas según el ancho disponible sin media
+    queries adicionales.
+  - El plan destacado usa `.Badge--inverted` ("Popular") antes del título —
+    la diferenciación es por texto/contraste, no por color de acento, mismo
+    principio que `.Alert`.
+- **FAQ** (`#faq-demo`) — apila varios `.Accordion`.
+  - `.FaqDemo__list` — `display: flex; flex-direction: column`, sin gap:
+    los `.Accordion` quedan pegados uno debajo del otro (bordes duplicados
+    en la unión, consistente con el peso visual brutalista) en vez de usar
+    gap, que ya causó un bug de borde visible en la card de demo de
+    `.Accordion` (ver sección `.Accordion`).
+- **Profile card** (`#profile-demo`) — combina `.Card`, `.Avatar` y
+  `.Badge` en una tarjeta de perfil de usuario.
+  - `.ProfileDemo__header` — `display: flex; align-items: center`, agrupa
+    el `.Avatar` con el nombre + `.Badge` del rol.
+- **Notifications** (`#notification-demo`) — apila varios `.Alert` (mismo
+  patrón que la diferenciación por contraste, no por color, ver `.Alert`).
+  - `.NotificationDemo__list` — `display: flex; flex-direction: column`,
+    con gap (a diferencia de `.FaqDemo__list`, acá sí hay espacio entre
+    items porque `.Alert` no depende de que sus bordes se toquen).
 
 ### Patrón: modal de preview + código
 

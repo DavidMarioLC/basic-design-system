@@ -760,28 +760,86 @@ body {
 }
 
 /* ==========================================================================
-   FormDemo
+   Examples
    ========================================================================== */
 
-.FormDemo {
-  max-width: 600px;
+.Examples {
+  max-width: 1400px;
   margin: 0 auto;
   padding: var(--space-8) var(--space-5);
 }
 
-.FormDemo__title {
+.Examples__title {
   margin: 0 0 var(--space-6);
   font-size: var(--font-size-2xl);
   font-weight: var(--font-weight-extrabold);
   text-transform: uppercase;
 }
 
+.Examples__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: start;
+  gap: var(--space-5);
+}
+
+@media (min-width: 960px) {
+  .Examples__grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+      "table    table    table"
+      "pricing  pricing  faq"
+      "form     profile  notification";
+  }
+
+  #table-demo {
+    grid-area: table;
+  }
+
+  #form-demo {
+    grid-area: form;
+  }
+
+  #pricing-demo {
+    grid-area: pricing;
+  }
+
+  #faq-demo {
+    grid-area: faq;
+  }
+
+  #profile-demo {
+    grid-area: profile;
+  }
+
+  #notification-demo {
+    grid-area: notification;
+  }
+}
+
+.ExampleCard {
+  padding: var(--space-5);
+  border: 2px solid var(--color-border);
+}
+
+.ExampleCard__title {
+  display: block;
+  margin: 0 0 var(--space-4);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-muted);
+}
+
+/* ==========================================================================
+   FormDemo
+   ========================================================================== */
+
 .FormDemo__form {
   display: flex;
   flex-direction: column;
   gap: var(--space-5);
-  padding: var(--space-5);
-  border: 2px solid var(--color-border);
 }
 
 .FormDemo__fieldset {
@@ -849,19 +907,6 @@ body {
    TableDemo
    ========================================================================== */
 
-.TableDemo {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: var(--space-8) var(--space-5);
-}
-
-.TableDemo__title {
-  margin: 0 0 var(--space-6);
-  font-size: var(--font-size-2xl);
-  font-weight: var(--font-weight-extrabold);
-  text-transform: uppercase;
-}
-
 .TableDemo__wrap {
   overflow-x: auto;
   border: 2px solid var(--color-border);
@@ -877,19 +922,6 @@ body {
    FaqDemo
    ========================================================================== */
 
-.FaqDemo {
-  max-width: 700px;
-  margin: 0 auto;
-  padding: var(--space-8) var(--space-5);
-}
-
-.FaqDemo__title {
-  margin: 0 0 var(--space-6);
-  font-size: var(--font-size-2xl);
-  font-weight: var(--font-weight-extrabold);
-  text-transform: uppercase;
-}
-
 .FaqDemo__list {
   display: flex;
   flex-direction: column;
@@ -899,23 +931,30 @@ body {
    PricingDemo
    ========================================================================== */
 
-.PricingDemo {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: var(--space-8) var(--space-5);
-}
-
-.PricingDemo__title {
-  margin: 0 0 var(--space-6);
-  font-size: var(--font-size-2xl);
-  font-weight: var(--font-weight-extrabold);
-  text-transform: uppercase;
-}
-
 .PricingDemo__grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: var(--space-5);
+}
+
+/* ==========================================================================
+   NotificationDemo
+   ========================================================================== */
+
+.NotificationDemo__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+/* ==========================================================================
+   ProfileDemo
+   ========================================================================== */
+
+.ProfileDemo__header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
 }
 
 /* ==========================================================================
